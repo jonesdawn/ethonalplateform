@@ -1,4 +1,7 @@
 /**index.wxss**/
+.section{
+  margin: 5rpx
+}
 .section__ctn{
     text-align: center;
 }

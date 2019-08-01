@@ -36,7 +36,9 @@ Page({
     this.info.name = e.detail.value
   },
   handleinfo5(e) {
-    this.info.price = e.detail.value
+    var price = e.detail.value
+    this.info.price=parseInt(price)
+    console.log(typeof this.info.price)
   },
   handleinfo6(e) {
     this.info.tel = e.detail.value
@@ -46,14 +48,20 @@ Page({
   },
   handleClick() {
     var _this = this;
-    this.info.time = util.formatTime(new Date())
-    console.log(util.formatTime(new Date()))
+    // this.info.time = util.formatTime(new Date())
+    // console.log(util.formatTime(new Date()))
     console.log(this.info)
     wx.request({
       url: 'http://192.168.13.128:8000/publication_info',
       data: this.info,
       method: "post",
-      success: this.handlePublishSuccess.bind(this)
+      success: function(res){
+        _this.handlePublishSuccess()
+        console.log(res)
+      },
+      fail:function(){
+        console.log("发布请求失败")
+      }
     })
   }, 
   handlePublishSuccess(data) {
