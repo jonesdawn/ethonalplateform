@@ -1,0 +1,19 @@
+{
+  "pages": [
+
+    "pages/index/index",
+    "pages/publish/publish"
+  ],
+  "window": {
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ethanol配送",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "navigateToMiniProgramAppIdList": [
+    "wxcbe110fu2xaxedfu",
+    "wxfb1ff0f3u0abe913"
+  ]
+}
