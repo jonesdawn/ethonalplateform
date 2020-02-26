@@ -12,4 +12,4 @@
       <label class="write">我的名字： </label>
       <input type="text" auto-focus placeholder='{{Explain}}' bindinput="handleinfo" maxlength="4" class="input-search"></input>
 </view>
-<button wx:if="{{flag}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" hover-class='hover_action' hover-stay-time="2000" class='publish_button'>绑定手机号</button>
+<button wx:if="{{flag}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" hover-class='hover_action' hover-stay-time="2500" class='publish_button'>绑定手机号</button>
