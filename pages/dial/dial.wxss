@@ -1,0 +1,38 @@
+/* pages/dial/dial.wxss */
+.bg{
+  height: 200rpx;
+  width: 100%;
+  margin-top: -40rpx
+}
+
+.info{
+  height: 100rpx;
+  display: flex;
+  margin: 60rpx 0rpx 0rpx 15rpx 
+}
+
+.input-search {
+  border: lightgrey;
+  border-style: solid;
+  border-width: 1px;
+  font-size: 14px;
+  border-radius: 10rpx;
+  height: 26px;
+  padding-left: 10px;
+  width: 600rpx;
+}
+
+.radios{
+  margin: 20rpx 0rpx 0rpx 20rpx
+}
+
+.icon-box{
+  display: flex;
+  margin: 0rpx 0rpx 40rpx 20rpx;
+  align-items: center
+}
+
+.t{
+  font-size: 50rpx;
+  color: purple
+}

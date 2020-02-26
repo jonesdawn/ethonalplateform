@@ -1,0 +1,14 @@
+<!--pages/dial/dial.wxml-->
+<radio-group bindchange="laternext" class="radios">
+    <radio value="单灶" >新开业单灶</radio>
+    <radio value="双灶" >新开业双灶</radio>
+    <radio value="老字号" checked="true">老字号</radio>
+</radio-group>
+<view class="info">
+  <label>地点：</label><input class="input-search" auto-focus placeholder='汉阳王家湾汉商21世纪5楼牛牛餐厅' bindinput="handleinfo" maxlength="20"></input>
+</view>
+    <view class="icon-box">
+      <icon class="icon-box-img" type="warn" size="50"></icon>
+      <text class="t">私单永久拉入黑名单哦~~~</text>
+    </view>
+<button bindtap='phonecall' class='tel' style="backgroundcolor:red;" data-sss='{{index}}' style="background-color:#289813;" >拨打商户电话</button>

@@ -1,0 +1,25 @@
+/* pages/add_blackperson/add_blackperson.wxss */
+.int{
+  display: flex;
+  margin: 20rpx;
+  border: lightgrey;
+  border-style: solid;
+  border-width: 1px;
+  font-size: 18px;
+  border-radius: 10rpx;
+  height: 30px;
+  padding-left: 10px;
+}
+
+.page-section-title{
+  font-size: 15px;
+  color: #999999;
+  text-align: center;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx
+}
+
+.textarea-wrp {
+    padding: 0 80rpx
+}
+

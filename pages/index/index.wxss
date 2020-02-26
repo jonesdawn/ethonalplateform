@@ -1,6 +1,6 @@
 /**index.wxss**/
 .section{
-  margin: 5rpx
+  margin: 2rpx
 }
 .section__ctn{
     text-align: center;
@@ -12,6 +12,24 @@
   color: red
 }
 
+.card{
+  margin: 5px;
+  background-color:rgb(213, 255, 205);
+  justify-content: space-between;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.tlecor{
+  background-color: #5555FF;
+  text-align: center
+}
+
+.job-tel{
+  text-align: center
+}
+
+.bottom_css {width:90rpx; height: 95rpx;}  
 
 @import "../lib/weui.wxss";
 
@@ -20,7 +38,7 @@
 }
 .flex-wrp {display: flex;}
 .info{justify-content:space-around}
-.img_css {width:150rpx; height: 150rpx;}
+.img_css {width:149rpx; height: 149rpx;}
 
 .divLine{
  background: #E0E3DA;
@@ -47,7 +65,7 @@
   left: 135px;
 }
 .admin{
-  margin: 5px;
+  margin: 2px;
   background-color:blanchedalmond;
   display: flex;
   justify-content: space-between
@@ -75,4 +93,6 @@ width: 150px;
   width: 80px;
   margin: 2px;
 }
+
+.img_css {width:149rpx; height: 149rpx;}
 

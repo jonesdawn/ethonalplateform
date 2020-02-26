@@ -1,0 +1,7 @@
+<!--pages/blacklist/blacklist.wxml-->
+<view class="section">
+  <view class="section section_gap" wx:for-items="{{array}}" wx:for-item="item" wx:key="{{item.index}}">
+    <view class="name">{{item.job}}:{{item.name}}</view>
+    <view class="divLine"></view>
+  </view>
+</view>

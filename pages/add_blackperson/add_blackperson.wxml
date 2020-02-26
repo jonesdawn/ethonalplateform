@@ -1,0 +1,22 @@
+<!--pages/add_blackperson/add_blackperson.wxml-->
+<view class="int">
+  <label>职位:</label><input maxlength="3"></input>
+</view>
+<view class="int">
+  <label>名字:</label><input maxlength="4"></input>
+</view>
+
+<button type="primary" bindtap='black_add' wx:if="{{flag}}">添加失信人</button>
+
+<view class="page-section-title">
+  请输入广告内容
+</view>
+
+<view class="section">
+  <form bindsubmit="bindFormSubmit">
+    <view class="textarea-wrp">
+      <textarea name="textarea" auto-height  auto-focus/>
+    </view>
+    <button form-type="submit"> 提交 </button>
+  </form>
+</view>

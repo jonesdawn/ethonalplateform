@@ -1,16 +1,20 @@
 <!--index.wxml-->
 <!-- <view hidden="{{flag ? false : true}}"> Hidden </view> 测试三元表达式的-->
+<!-- 顶部列 -->
 <view class='admin'>
-  <label>密码</label><input class="pas" type="text" bindinput='password' placeholder='{{psw}}' value="{{value}}" /><view>浏览量:{{num}}</view><view><button class='bt3' bindtap='nav'>厨具佐料粮油装修</button></view>
+  <input class="pas" type="text" bindinput='password' placeholder='{{psw}}' value="{{value}}" /><label bindtap="navigagetonamage">OK</label><view>浏览量:{{num}}</view><view><button class='bt3' bindtap='nav'>黑名单</button></view>
 </view>
+  <!-- 转发和个人中心按钮 -->
   <button open-type="share" type="primary" hover-class="other-button-hover" class='btn1' >转发</button>
-  <button type="primary" hover-class="other-button-hover" class='btn2' bindtap='bt_click'>发布</button>
+  <button type="primary" hover-class="other-button-hover" class='btn2' bindtap='bt_click'>个人中心</button>
+
+<!-- 循环内容 -->
 <view class="section">
   <view class="section section_gap" wx:for-items="{{array}}" wx:for-item="item" wx:key="{{item.index}}">
     <view>{{item.title}}</view>
     <view class="section__ctn">
-      <block wx:for='{{item.images}}' wx:key='index' wx:for-item='srcItem' style="flex-direction:row;" class="flex-wrp">
-        <image bindtap='topic_preview' data-id='{{item.uuid}}' data-url='{{item.src[0].img}}' class='img_css' src='{{srcItem}}'></image>
+      <block wx:for='{{item.images}}' wx:key='index' wx:for-item='srcItem' style="flex-direction:row;" class="flex-wrp" bindtap="toswiper">
+        <image bindtap='topic_preview' data-id='{{item.uuid}}' class='img_css' src='{{srcItem}}'></image>
       </block>
 
       <view class="info">
@@ -27,6 +31,16 @@
       </view>
     </view>
   </view>
+  <!-- 底部名片 -->
+  <view class="card">
+        <view class="tlecor">武汉高旺环保能源</view>
+        <view class="job-tel"><view>罗经理</view><button type="primary" bindtap="phonecall2">点击拨打：13396089753</button></view>
+        <view class="job-tel">地址：武汉市汉口古田四路常码头</view>
+        <view class="tlecor">主营</view>
+        <view class="job-tel">厨用能源、生物油、环保油、醇基燃料</view>
+        <view class="job-tel">兼营：免费提供灶具、免费维修和炉具改装</view>
+        <image class='bottom_css'></image>
+  </view> 
 </view>
 
 

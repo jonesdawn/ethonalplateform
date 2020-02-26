@@ -1,14 +1,24 @@
 {
   "pages": [
-
+    "pages/getinfo/getinfo",
+    "pages/swiper/swiper",
+    "pages/add_blackperson/add_blackperson",
+    "pages/managerpc/managerpc",
     "pages/index/index",
-    "pages/publish/publish"
+
+    "pages/dial/dial",
+    "pages/business/business",
+    "pages/referencespc/referencespc",
+    "pages/blacklist/blacklist",
+    "pages/pay/pay",
+    "pages/login/login",
+    "pages/Common/ad/ad"
   ],
   "window": {
     "enablePullDownRefresh": true,
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "ethanol配送",
+    "navigationBarBackgroundColor": "#1cbbb4",
+    "navigationBarTitleText": "武汉高旺能源",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",

@@ -4,13 +4,31 @@ Page({
   data: {
     psw:88888,
     num: 53869,
-    array: [],
+    array: [
+      
+    ],
   },
+  //toswiper
+  toswiper:function(){
+    wx.navigateTo({
+      url: '../swiper/swiper',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  }
+  ,
   //打电话
   phonecall: function (e) {
     // console.log(e.target.dataset.sss)
     wx.makePhoneCall({
       phoneNumber: this.data.array[e.target.dataset.sss].contact
+    })
+  },
+  phonecall2: function (e) {
+    // console.log(e.target.dataset.sss)
+    wx.makePhoneCall({
+      phoneNumber: "13396089753"
     })
   },
   //首次进入加载数据
@@ -24,7 +42,7 @@ Page({
   },
   bt_click(){
     wx.navigateTo({
-      url: '../publish/publish' 
+      url: '../referencespc/referencespc' 
     })
   },
   onShareAppMessage: function (ops) {
@@ -55,7 +73,7 @@ Page({
       // success: this.setData({ markers })
       success: function (res) {
         
-        console.log(res.data)
+        // console.log(res.data)
         // 回调函数
         // var array_list = that.data.array;
         // const oldData = that.data.array; oldData.concat(res.data)新老数据连接需要处理
@@ -86,7 +104,7 @@ Page({
     console.log("关闭");
 
     wx.setNavigationBarTitle({
-      title: '高旺能源欢迎您'
+      title: '武汉高旺环保能源'
           })//动态设置当前页面的标题。
         },
   // onReachBottom: function () {
@@ -121,16 +139,18 @@ Page({
   //     }
   //   })
   // },
+  //预览图片
   topic_preview: function (e) {
     var that = this;
     var id = e.currentTarget.dataset.id;
-    // console.log(id)
+    console.log(id)
+    console.log(that.data.array)
     var previewImgArr = [];
     for (var i in that.data.array) {
-      if (id == that.data.array[i].id) {
-        // console.log("into")
-        var current_img = that.data.array[i].src[0].img;
-        previewImgArr = that.data.array[i].src;
+      if (id == that.data.array[i].uuid) {
+        console.log("into")
+        var current_img = that.data.array[i].images[0].img;
+        previewImgArr = that.data.array[i].images;
       }
     }
     wx.previewImage({
@@ -140,9 +160,15 @@ Page({
   },
   //二维码预览识别跳转
   nav:function(){
-    wx.previewImage({
-      urls: ['https://pic1.ajkimg.com/m/03cd6a84e1cca9163e33f95595feb426/120x120n@2x.jpg', 'http://pic7.58cdn.com.cn/bizmp/n_v2fa935e12728e4836a5c93d41e6c36d55_e43e0f2c00f5ddeb.jpg']
+    wx.navigateTo({
+      url: '../blacklist/blacklist',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
     })
+    // wx.previewImage({
+    //   urls: ['https://pic1.ajkimg.com/m/03cd6a84e1cca9163e33f95595feb426/120x120n@2x.jpg', 'http://pic7.58cdn.com.cn/bizmp/n_v2fa935e12728e4836a5c93d41e6c36d55_e43e0f2c00f5ddeb.jpg']
+    // })
     // wx.navigateToMiniProgram({
     //   appId: 'wxfb1ff0f3u0abe913', // 要跳转的小程序的appid
     //   path: 'page/index/index', // 跳转的目标页面
@@ -159,25 +185,58 @@ Page({
     //   }
     // }) 
   },
-  //校验密码
+  my_deleteinfo:{},
+  //校验密码删除信息
   del_info:function(e){
-    if (this.pass.word =='高旺环保88888'){
-      console.log(e.target.dataset.aaa)//找寻需要删除的信息的id值
-      console.log("密码正确")
-      // wx.request({
-      //   url: 'http://192.168.13.128:8000/delete',
-      //   data: e.target.dataset.aaa,
-      //   method: "post",
-      //   success: "删除数组数据"
-      // })
+    let that=this
+    if (that.pass.word =='高旺环保88888'){
+      that.my_deleteinfo.uuid = e.target.dataset.aaa
+      // console.log(e.target.dataset.aaa)//找寻需要删除的信息的id值
+      // console.log("密码正确")
+      // console.log(that.my_deleteinfo)
+      wx.request({
+        url: 'http://192.168.13.128:8000/info_delete',
+        data: that.my_deleteinfo,
+        method: "delete",
+        success: function(res){
+            that.loadProduct2()
+        }
+      })
     }else{
       console.log("密码错误")
-      this.setData({
+      that.setData({
         'value': ''
       })
-      this.setData({
+      that.setData({
+        'psw': '请重新输入'
+      })
+    }
+  },
+  navigagetonamage: function (e) {
+    let that = this
+    if (that.pass.word == '高旺环保88888') {
+      console.log("跳转到发布页")
+      wx.navigateTo({
+        url: '../managerpc/managerpc'
+      }),
+      //这里需要换不同的url,管理员的个人中心
+      wx.request({
+        url: 'http://192.168.13.128:8000/info_delete',
+        data: that.my_deleteinfo,
+        method: "delete",
+        success: function (res) {
+          that.loadProduct2()
+        }
+      })
+    } else {
+      console.log("密码错误")
+      that.setData({
+        'value': ''
+      })
+      that.setData({
         'psw': '请重新输入'
       })
     }
   }
+
 })

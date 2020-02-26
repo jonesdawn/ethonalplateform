@@ -1,0 +1,4 @@
+<!--pages/Common/ad/ad.wxml-->
+<template name="ad">
+  <view style="color:red;">{{title}}</view>
+</template>

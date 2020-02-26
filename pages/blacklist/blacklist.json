@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "navigationBarBackgroundColor": "#ff8000",
+  "navigationBarTitleText": "业务黑名单公告",
+  "navigationBarTextStyle": "black"
+}

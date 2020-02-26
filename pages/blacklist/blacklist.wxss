@@ -1,0 +1,17 @@
+/* pages/blacklist/blacklist.wxss */
+.blacklist{
+  text-align: center
+}
+
+.name{
+  text-align: center;
+  margin: 15rpx;
+  font-size: 18px;
+  color: slateblue
+}
+
+.divLine{
+ background: #E0E3DA;
+ width: 100%;
+ height: 5rpx;
+}

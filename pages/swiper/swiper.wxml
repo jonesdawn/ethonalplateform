@@ -1,0 +1,15 @@
+<import src="../Common/ad.wxml" />  
+<view class="container">
+  <view class="page-body">
+    <swiper style="height: {{clientHeight?clientHeight+'rpx':'auto'}}" indicator-dots="true" autoplay="true" interval="2000">
+        <block wx:for="{{imgs}}" wx:key="*this" wx:for-item='srcItem'>
+          <swiper-item>
+            <image src='{{srcItem}}'></image>
+          </swiper-item >
+        </block>
+    </swiper>
+  </view>
+  <view>图片放大轮播图</view>
+</view>
+<template is="ad" data="{{title}}"/>
+
